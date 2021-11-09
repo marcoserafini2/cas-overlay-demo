@@ -20,7 +20,7 @@ public class CasConfig {
     private MyProperties myProperties;
 
     @Bean
-    public MyProperties myProperties() {
+    public MyProperties myProperties2() {
         return new MyProperties();
     }
 }
