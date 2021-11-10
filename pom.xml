@@ -32,6 +32,12 @@
             <artifactId>cas-server-support-json-service-registry</artifactId>
             <version>${cas.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-indexer</artifactId>
+            <version>5.3.9</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -74,6 +80,7 @@
     <properties>
         <cas.version>6.4.2</cas.version>
         <java.version>11</java.version>
+        <springboot.version>2.5.4</springboot.version>
     </properties>
 
 </project>

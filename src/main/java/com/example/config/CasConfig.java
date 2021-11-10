@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 //@Import(CasConfig2.class)
 public class CasConfig {
 
-    //@Autowired
+    @Autowired
     private CasTest casTest;
 
     @Autowired
