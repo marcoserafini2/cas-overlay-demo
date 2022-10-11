@@ -81,6 +81,8 @@ or override log42.component.properties to turn off async
 
         <Logger name="org.opensaml" level="${sys:opensaml.log.level}"/>
 
+        <Logger name="org.apereo.cas.support.inwebo" level="debug"/>
+
         <Logger name="PROTOCOL_MESSAGE" level="info" />
 
         <Logger name="net.jradius" level="warn"/>

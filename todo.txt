@@ -1,0 +1,46 @@
+push mobile -> push mobile/PC
+
+
+- casInweboErrorView : confirmation PIN
+
+
+
+
+conf push = oui|non
+conf navigateur  = VA|mAccess|non
+
+si status = 0 :
+  si conf navigateur = VA => VA
+  si conf navigateur = MA => erreur + enrôlement MA
+  si conf navigateur = none => erreur
+
+si status = 1
+  si conf push = oui => push
+  si conf push = non => erreur
+
+si status = 2 ou 3
+  erreur
+
+si status = 4
+  si conf navigateur = VA => VA
+  si conf navigateur = MA => erreur
+
+si status = 5,
+  si conf push = non,
+    si conf navigateur = VA => VA
+    si conf navigateur = MA => erreur
+    si conf navigateur = none => erreur
+  si conf push = oui,
+    si conf navigateur = VA => selection
+    si conf navigateur = MA => push
+    si conf navigateur = none => erreur
+
+
+page VA : test si enrôlé => authent, sinon mode enrôlement
+
+
+
+
+
+https://docs.inwebo.com/documentation/user-management-with-soap-api
+https://docs.inwebo.com/documentation/quickstart-inwebo-virtual-authenticator
