@@ -59,8 +59,4 @@ public interface WebflowConstants {
      * The otp request parameter.
      */
     String OTP = "otp";
-    /**
-     * The pwd request parameter.
-     */
-    String PWD = "pwd";
 }

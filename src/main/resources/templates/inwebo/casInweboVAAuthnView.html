@@ -13,11 +13,10 @@
 <main role="main" class="container mt-3 mb-3">
     <div layout:fragment="content" class="banner banner-message mdc-card card p-4 m-auto w-lg-66">
         <script type="text/JavaScript" src="https://ult-inwebo.com/va/client.js"></script>
-        <form name="form" style="display:none;" method="POST" onsubmit="alert('submit')">
+        <form id="otpForm" style="display:none;" method="POST" onsubmit="alert('submit')">
             <input type="hidden" name="execution" th:value="${flowExecutionKey}" />
             <input type="hidden" name="_eventId" value="otp" />
-            <input name="login" type="text" />
-            <input name="pwd" type="password" />
+            <input type="hidden" name="otp" id="otp" value="" />
         </form>
         <div id="inwebologin" style="display:none;">[[${login}]]</div>
         <div id="vaContainer" style="display:none;"></div>
@@ -29,7 +28,8 @@
             window.onload = () => {
                 iwstart("vaStartAuthentication", function(iw, data) {
                     if (data.action == "authentication" && data.code == "ok") {
-                        iw.insertFields(data.result);
+                        document.getElementById('otp').value = data.result.values[1];
+                        document.getElementById("otpForm").submit();
                     }
                     if (data.type == "error" && data.code == "nok" && data.result.reason == "no_profile") {
                         iwterminate();
