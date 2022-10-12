@@ -58,8 +58,8 @@ public class InweboMultifactorWebflowConfigurer extends AbstractCasMultifactorWe
 
             val selectAuthentState = createViewState(flow, "selectAuthent", "inwebo/casInweboSelectAuthnView");
             createTransitionForState(selectAuthentState, WebflowConstants.PUSH, "startPush");
-            createTransitionForState(checkUserState, WebflowConstants.VA, "startVA");
-            createTransitionForState(checkUserState, WebflowConstants.MA, "startMA");
+            createTransitionForState(selectAuthentState, WebflowConstants.VA, "startVA");
+            createTransitionForState(selectAuthentState, WebflowConstants.MA, "startMA");
 
             val startMAState = createViewState(flow, "startMA", "inwebo/casInweboMAAuthnView");
             createTransitionForState(startMAState, "enroll", "mustEnroll");

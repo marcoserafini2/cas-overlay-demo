@@ -43,7 +43,8 @@ public class InweboConsoleAdmin extends WebServiceGatewaySupport {
      */
     public LoginQueryResult loginQuery(final long userId) {
         val loginQuery = new LoginQuery();
-        loginQuery.setUserid(userId);
+        loginQuery.setUserid(0);
+        loginQuery.setLoginid(userId);
         return ((LoginQueryResponse) getWebServiceTemplate().marshalSendAndReceive(loginQuery)).getLoginQueryReturn();
     }
 }

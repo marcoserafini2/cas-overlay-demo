@@ -1,7 +1,7 @@
 server.ssl.enabled: false
 server.port: 8080
 
-cas.authn.accept.users: inwebo1::inwebo1,inwebom::inwebom,inwebop::inwebop,inwebov::inwebov
+cas.authn.accept.users: inwebom::inwebom,inwebop::inwebop,inwebov::inwebov
 
 cas.tgc.secure: false
 cas.tgc.same-site-policy: Lax
@@ -27,5 +27,5 @@ cas.authn.mfa.inwebo.client-certificate.certificate.location: classpath:castest.
 cas.authn.mfa.inwebo.client-certificate.passphrase: itsmycert
 cas.authn.mfa.inwebo.site-alias: c429850d6433996239aac6570d6edb48
 cas.authn.mfa.inwebo.service-id: 7046
-#cas.authn.mfa.inwebo.push-enabled: false
-#cas.authn.mfa.inwebo.browser-authenticator: VIRTUAL_AUTHENTICATOR
+cas.authn.mfa.inwebo.push-enabled: false
+cas.authn.mfa.inwebo.browser-authenticator: VIRTUAL_AUTHENTICATOR
