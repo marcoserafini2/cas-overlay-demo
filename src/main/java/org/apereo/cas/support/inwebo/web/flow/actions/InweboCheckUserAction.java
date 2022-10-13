@@ -52,7 +52,7 @@ public class InweboCheckUserAction extends BaseCasWebflowAction {
         val pushEnabled = inwebo.isPushEnabled();
 
         try {
-            val response = service.loginSearch(login);
+            val response = service.loginSearchQuery(login);
             val oneUser = response.isOk() && response.getCount() == 1 && response.getUserId() > 0;
             if (oneUser) {
                 val userIsBlocked = response.getUserStatus() == 1;
